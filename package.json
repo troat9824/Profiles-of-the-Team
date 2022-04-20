@@ -1,0 +1,26 @@
+{
+  "name": "profiles-of-the-team",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/troat9824/Profiles-of-the-Team.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/troat9824/Profiles-of-the-Team/issues"
+  },
+  "homepage": "https://github.com/troat9824/Profiles-of-the-Team#readme",
+  "dependencies": {
+    "inquirer": "^8.2.2"
+  }
+}
