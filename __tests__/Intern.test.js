@@ -1,6 +1,6 @@
 const { test } = require('@jest/globals');
 const { TestWatcher } = require('jest');
-const Intern = require('../lib/intern')
+const Intern = require('../lib/Intern')
 
 test("creates intern name", () => {
     const testIntern = new Intern('Taylor', 'ABC123', 'Taylor@gmail', 'that one place');

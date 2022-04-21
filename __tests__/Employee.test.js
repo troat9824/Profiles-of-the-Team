@@ -1,62 +1,46 @@
 const { TestWatcher } = require('jest');
 const Employee = require('../lib/Employee');
 
-test("creates new ee name", () => {
-    const employeeName = "Taylor";
-    const testEmployee = new Employee(employeeName);
-    expect(testEmployee.name).toBe(employeeName)
+test("creates Employee name", () => {
+    const testEmployee = new Employee('Taylor', 'ABC123', 'Taylor@gmail');
+    expect(testEmployee.name).toEqual(expect.stringContaining('Taylor'));
 
 });
 
 
-test("checking employee's Id", () => {
-    const employeeName = "Taylor";
-    const employeeId ="ABC123"
-    const testEmployee = new Employee(employeeName,employeeId);
-    expect(testEmployee.id).toBe(employeeId)
+test("creates Employee id", () => {
+    const testEmployee = new Employee('Taylor', 'ABC123', 'Taylor@gmail');
+    expect(testEmployee.id).toEqual(expect.stringContaining('ABC123'));
 
 });
 
-test("checking employee's email", () => {
-    const employeeName = "Taylor";
-    const employeeId ="ABC123"
-    const employeeEmail = "Taylor@gmail.com"
-    const testEmployee = new Employee(employeeName,employeeId,employeeEmail);
-    expect(testEmployee.email).toBe(employeeEmail)
+test("checking Employee's email", () => {
+    const testEmployee = new Employee('Taylor', 'ABC123', 'Taylor@gmail');
+    expect(testEmployee.email).toEqual(expect.stringContaining('Taylor@gmail'));
 
 });
 
-
-test("checking employee's getName", () => {
-    const employeeName = "Taylor";
-    const testEmployee = new Employee(employeeName);
-    expect(testEmployee.getName()).toBe(employeeName)
+test("checking Employee's getName", () => {
+    const testEmployee = new Employee('Taylor', 'ABC123', 'Taylor@gmail');
+    expect(testEmployee.getName()).toEqual(expect.stringContaining('Taylor'));
 
 });
 
 
-test("checking employee's getId", () => {
-    const employeeName = "Taylor";
-    const employeeId ="ABC123"
-    const testEmployee = new Employee(employeeName,employeeId);
-    expect(testEmployee.getId()).toBe(employeeId)
+test("checking Employee's getId", () => {
+    const testEmployee = new Employee('Taylor', 'ABC123', 'Taylor@gmail');
+    expect(testEmployee.getId()).toEqual(expect.stringContaining('ABC123'));
 
 });
 
-test("checking employee's getEmail", () => {
-    const employeeName = "Taylor";
-    const employeeId ="ABC123"
-    const employeeEmail = "Taylor@gmail.com"
-    const testEmployee = new Employee(employeeName,employeeId,employeeEmail);
-    expect(testEmployee.getEmail()).toBe(employeeEmail)
+test("checking Employee's getEmail", () => {
+    const testEmployee = new Employee('Taylor', 'ABC123', 'Taylor@gmail');
+    expect(testEmployee.getEmail()).toEqual(expect.stringContaining('Taylor@gmail'));
 
 });
 
-test("checking employee's getRole", () => {
-    const employeeName = "Taylor";
-    const employeeId ="ABC123"
-    const employeeEmail = "Taylor@gmail.com"
-    const testEmployee = new Employee(employeeName,employeeId,employeeEmail);
-    expect(testEmployee.getRole()).toBe("Employee")
+test("checking Employee's getRole", () => {
+    const testEmployee = new Employee('Taylor', 'ABC123', 'Taylor@gmail');
+    expect(testEmployee.getRole()).toEqual(expect.stringContaining('Employee'));
 
 });
