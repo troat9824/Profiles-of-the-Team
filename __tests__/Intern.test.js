@@ -1,62 +1,57 @@
+const { test } = require('@jest/globals');
 const { TestWatcher } = require('jest');
-const Intern = require('../lib/Intern')
+const Intern = require('../lib/intern')
 
 test("creates intern name", () => {
-    var internName = "Taylor";
-    const testIntern = new Intern(internName);
-    expect(testIntern.name).toBe(internName)
+    const testIntern = new Intern('Taylor', 'ABC123', 'Taylor@gmail', 'that one place');
+    expect(testIntern.name).toEqual(expect.stringContaining('Taylor'));
 
 });
 
 
 test("creates intern id", () => {
-    var internName = "Taylor";
-    var internId ="ABC123"
-    const testIntern = new Intern(internName,internId);
-    expect(testIntern.id).toBe(internId)
+    const testIntern = new Intern('Taylor', 'ABC123', 'Taylor@gmail', 'that one place');
+    expect(testIntern.id).toEqual(expect.stringContaining('ABC123'));
 
 });
 
 test("checking intern's email", () => {
-    var internName = "Taylor";
-    var internId ="ABC123"
-    var internEmail = "Taylor@gmail.com"
-    const testIntern = new Intern(internName,internId,internEmail);
-    expect(testIntern.email).toBe(internEmail)
+    const testIntern = new Intern('Taylor', 'ABC123', 'Taylor@gmail', 'that one place');
+    expect(testIntern.email).toEqual(expect.stringContaining('Taylor@gmail'));
 
 });
 
+test("checking intern's school", () => {
+    const testIntern = new Intern('Taylor', 'ABC123', 'Taylor@gmail', 'that one place');
+    expect(testIntern.school).toEqual(expect.stringContaining('that one place'));
+})
 
 test("checking intern's getName", () => {
-    var internName = "Taylor";
-    const testIntern = new Intern(internName);
-    expect(testIntern.getName()).toBe(internName)
+    const testIntern = new Intern('Taylor', 'ABC123', 'Taylor@gmail', 'that one place');
+    expect(testIntern.getName()).toEqual(expect.stringContaining('Taylor'));
 
 });
 
 
 test("checking intern's getId", () => {
-    var internName = "Taylor";
-    var internId ="ABC123"
-    const testIntern = new Intern(internName,internId);
-    expect(testIntern.getId()).toBe(internId)
+    const testIntern = new Intern('Taylor', 'ABC123', 'Taylor@gmail', 'that one place');
+    expect(testIntern.getId()).toEqual(expect.stringContaining('ABC123'));
 
 });
 
 test("checking intern's getEmail", () => {
-    var internName = "Taylor";
-    var internId ="ABC123"
-    var internEmail = "Taylor@gmail.com"
-    const testIntern = new Intern(internName,internId,internEmail);
-    expect(testIntern.getEmail()).toBe(internEmail)
+    const testIntern = new Intern('Taylor', 'ABC123', 'Taylor@gmail', 'that one place');
+    expect(testIntern.getEmail()).toEqual(expect.stringContaining('Taylor@gmail'));
 
 });
 
 test("checking intern's getRole", () => {
-    var internName = "Taylor";
-    var internId ="ABC123"
-    var internEmail = "Taylor@gmail.com"
-    const testIntern = new Intern(internName,internId,internEmail);
-    expect(testIntern.getRole()).toBe("intern")
+    const testIntern = new Intern('Taylor', 'ABC123', 'Taylor@gmail', 'that one place');
+    expect(testIntern.getRole()).toEqual(expect.stringContaining('Intern'));
 
+});
+
+test("checking intern's school", () => {
+    const testIntern = new Intern('Taylor', 'ABC123', 'Taylor@gmail', 'that one place');
+    expect(testIntern.getSchool()).toEqual(expect.stringContaining('that one place'));
 });

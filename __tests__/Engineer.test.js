@@ -2,79 +2,56 @@ const { test } = require('@jest/globals');
 const { TestWatcher } = require('jest');
 const Engineer = require('../lib/Engineer')
 
-test("creates engineer name", () => {
-    const engineerName = "Taylor";
-    const testEngineer = new Engineer(engineerName);
-    expect(testEngineer.name).toBe(engineerName)
+test("creates Engineer name", () => {
+    const testEngineer = new Engineer('Taylor', 'ABC123', 'Taylor@gmail', 'that one place');
+    expect(testEngineer.name).toEqual(expect.stringContaining('Taylor'));
 
 });
 
 
-test("creates engineer id", () => {
-    const engineerName = "Taylor";
-    const engineerId ="ABC123"
-    const testEngineer = new Engineer(engineerName,engineerId);
-    expect(testEngineer.id).toBe(engineerId)
+test("creates Engineer id", () => {
+    const testEngineer = new Engineer('Taylor', 'ABC123', 'Taylor@gmail', 'that one place');
+    expect(testEngineer.id).toEqual(expect.stringContaining('ABC123'));
 
 });
 
-test("checking engineer's email", () => {
-    const engineerName = "Taylor";
-    const engineerId ="ABC123"
-    const engineerEmail = "Taylor@gmail.com"
-    const testEngineer = new Engineer(engineerName,engineerId,engineerEmail);
-    expect(testEngineer.email).toBe(engineerEmail)
+test("checking Engineer's email", () => {
+    const testEngineer = new Engineer('Taylor', 'ABC123', 'Taylor@gmail', 'that one place');
+    expect(testEngineer.email).toEqual(expect.stringContaining('Taylor@gmail'));
 
 });
 
-test("checking engineer's gitHub", () => {
-    const engineerName = "Taylor";
-    const engineerId ="ABC123"
-    const engineerEmail = "Taylor@gmail.com"
-    const engineerGithub = "taylor.github"
-    const testEngineer = new Engineer(engineerName,engineerId,engineerEmail,engineerGithub);
-    expect(testEngineer.engineerGithub).toBe(engineerGithub)
+test("checking Engineer's github", () => {
+    const testEngineer = new Engineer('Taylor', 'ABC123', 'Taylor@gmail', 'taylor.github');
+    expect(testEngineer.github).toEqual(expect.stringContaining('taylor.github'));
 })
 
-test("checking engineer's getName", () => {
-    const engineerName = "Taylor";
-    const testEngineer = new Engineer(engineerName);
-    expect(testEngineer.getName()).toBe(engineerName)
+test("checking Engineer's getName", () => {
+    const testEngineer = new Engineer('Taylor', 'ABC123', 'Taylor@gmail', 'that one place');
+    expect(testEngineer.getName()).toEqual(expect.stringContaining('Taylor'));
 
 });
 
 
-test("checking engineer's getId", () => {
-    const engineerName = "Taylor";
-    const engineerId ="ABC123"
-    const testEngineer = new Engineer(engineerName,engineerId);
-    expect(testEngineer.getId()).toBe(engineerId)
+test("checking Engineer's getId", () => {
+    const testEngineer = new Engineer('Taylor', 'ABC123', 'Taylor@gmail', 'that one place');
+    expect(testEngineer.getId()).toEqual(expect.stringContaining('ABC123'));
 
 });
 
-test("checking engineer's getEmail", () => {
-    const engineerName = "Taylor";
-    const engineerId ="ABC123"
-    const engineerEmail = "Taylor@gmail.com"
-    const testEngineer = new Engineer(engineerName,engineerId,engineerEmail);
-    expect(testEngineer.getEmail()).toBe(engineerEmail)
+test("checking Engineer's getEmail", () => {
+    const testEngineer = new Engineer('Taylor', 'ABC123', 'Taylor@gmail', 'that one place');
+    expect(testEngineer.getEmail()).toEqual(expect.stringContaining('Taylor@gmail'));
 
 });
 
-test("checking engineer's getRole", () => {
-    const engineerName = "Taylor";
-    const engineerId ="ABC123"
-    const engineerEmail = "Taylor@gmail.com"
-    const testEngineer = new Engineer(engineerName,engineerId,engineerEmail);
-    expect(testEngineer.getRole()).toBe("Engineer")
+test("checking Engineer's getRole", () => {
+    const testEngineer = new Engineer('Taylor', 'ABC123', 'Taylor@gmail', 'that one place');
+    expect(testEngineer.getRole()).toEqual(expect.stringContaining('Engineer'));
 
 });
 
-test("checking engineer's gitHub", () => {
-    const engineerName = "Taylor";
-    const engineerId ="ABC123"
-    const engineerEmail = "Taylor@gmail.com"
-    const engineerGithub = "taylor.github"
-    const testEngineer = new Engineer(engineerName,engineerId,engineerEmail,engineerGithub);
-    expect(testEngineer.getGithub()).toBe(engineerGithub)
+test("checking Engineer's getGitHub", () => {
+    const testEngineer = new Engineer('Taylor', 'ABC123', 'Taylor@gmail', 'taylor.github');
+    expect(testEngineer.getGithub()).toEqual(expect.stringContaining('taylor.github'));
 });
